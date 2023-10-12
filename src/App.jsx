@@ -2,8 +2,13 @@ import { useState } from 'react';
 import './App.css';
 
 import PokemonCard from "./components/PokemonCard";
+import NavBar from './components/Navbar';
 
 const pokemonList = [
+  {
+    name: "Ronflex",
+    imgSrc: "https://www.pokepedia.fr/images/archive/2/2b/20160822012737%21Ronflex-RFVF.png"
+  },
   {
     name: "bulbasaur",
     imgSrc:
@@ -33,19 +38,10 @@ const pokemonList = [
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  const previousClick = () => {
-    setPokemonIndex(pokemonIndex - 1)
-  }
-
-  const nextClick = () => {
-    setPokemonIndex(pokemonIndex + 1)
-  }
-
   return (
     <>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      <button onClick={previousClick} disabled={pokemonIndex === 0}>Previous</button>
-      <button onClick={nextClick} disabled={pokemonIndex === pokemonList.length - 1}>Next</button>
+      <NavBar pokemonList={pokemonList} pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex}/>
     </>
   );
 }
