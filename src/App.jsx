@@ -10,41 +10,40 @@ const pokemonList = [
     imgSrc: "https://www.pokepedia.fr/images/archive/2/2b/20160822012737%21Ronflex-RFVF.png"
   },
   {
-    name: "bulbasaur",
+    name: "Bulbasaur",
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
   },
   {
-    name: "charmander",
+    name: "Charmander",
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
   },
   {
-    name: "squirtle",
+    name: "Squirtle",
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
   },
   {
-    name: "pikachu",
+    name: "Pikachu",
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
   },
   {
-    name: "mew",
+    name: "Mew",
   },
 ];
 
 
 function App() {
-  const [pokemonIndex, setPokemonIndex] = useState(0);
+  const [pokemonSelect, setPokemonSelect] = useState(0);
 
   return (
     <>
-      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      <NavBar pokemonList={pokemonList} pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex}/>
+      <PokemonCard pokemon={pokemonList[pokemonSelect]} />
+      <NavBar pokemonList={pokemonList} pokemonSelect={pokemonSelect} setPokemonSelect={setPokemonSelect} />
     </>
   );
 }
-
 
 export default App;
